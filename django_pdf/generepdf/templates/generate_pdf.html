@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+    color: #131313;
+    }
+
+    .invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4b4b4b;
+    padding-bottom: 10px;
+    }
+
+    header .company-info h1 {
+    color: #4CAF50;
+    margin: 0;
+    }
+
+    header .invoice-info h2 {
+    margin: 0;
+    color: #4CAF50;
+    }
+
+    header .invoice-info p {
+    margin: 5px 0;
+    }
+
+    .billing-info {
+    margin-bottom: 20px;
+    }
+
+    .billing-info h2 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    }
+
+    .billing-info p {
+    margin: 5px 0;
+    padding-left: 10px;
+    font-weight: bold;
+    }
+
+    .invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    }
+
+    .invoice-table th, .invoice-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    }
+
+    .invoice-table th {
+    background-color: #4CAF50;
+    color: white;
+    }
+
+    .invoice-table tfoot td {
+    font-weight: bold;
+    background-color: #f9f9f9;
+    }
+
+    footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    border-top: 2px solid #4CAF50;
+    padding-top: 10px;
+    }
+
+</style>
+<body>
+    <div class="invoice-box">
+        <header>
+            <div class="company-info">
+                <h1>Votre Entreprise</h1>
+                <p>123 Rue Exemple, Ville, État, 12345</p>
+                <p>Email: info@votreentreprise.com | Téléphone: (555) 555-5555</p>
+            </div>
+            <div class="invoice-info">
+                <h2>Facture</h2>
+                <p><strong>Numéro :</strong> #123</p>
+                <p><strong>Date :</strong> 19 mai 2024</p>
+                <p><strong>Échéance :</strong> 26 mai 2024</p>
+            </div>
+        </header>
+        <div class="billing-info">
+            <h2>Facturer à :</h2>
+            <p>Client Nom</p>
+            <p>456 Avenue Exemple, Ville, État, 67890</p>
+        </div>
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produit 1</td>
+                    <td>2</td>
+                    <td>50€</td>
+                    <td>100€</td>
+                </tr>
+                <tr>
+                    <td>Produit 2</td>
+                    <td>1</td>
+                    <td>150€</td>
+                    <td>150€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Sous-total</td>
+                    <td>250€</td>
+                </tr>
+                <tr>
+                    <td colspan="3">TVA (20%)</td>
+                    <td>50€</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>300€</td>
+                </tr>
+            </tfoot>
+        </table>
+        <footer>
+            <p>Merci pour votre achat !</p>
+        </footer>
+    </div>
+</body>
+</html>

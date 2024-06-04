@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="invoice-box">
+        <header>
+            <div class="company-info">
+                <h1>Votre Entreprise</h1>
+                <p>123 Rue Exemple, Ville, État, 12345</p>
+                <p>Email: info@votreentreprise.com | Téléphone: (555) 555-5555</p>
+            </div>
+            <div class="invoice-info">
+                <h2>Facture</h2>
+                <p><strong>Numéro :</strong> #123</p>
+                <p><strong>Date :</strong> 19 mai 2024</p>
+                <p><strong>Échéance :</strong> 26 mai 2024</p>
+            </div>
+        </header>
+        <div class="billing-info">
+            <h2>Facturer à :</h2>
+            <p>Client Nom</p>
+            <p>456 Avenue Exemple, Ville, État, 67890</p>
+        </div>
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produit 1</td>
+                    <td>2</td>
+                    <td>50€</td>
+                    <td>100€</td>
+                </tr>
+                <tr>
+                    <td>Produit 2</td>
+                    <td>1</td>
+                    <td>150€</td>
+                    <td>150€</td>
+                </tr>
+                <tr>
+                    <td>Produit 2</td>
+                    <td>4</td>
+                    <td>170€</td>
+                    <td>140€</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Sous-total</td>
+                    <td>250€</td>
+                </tr>
+                <tr>
+                    <td colspan="3">TVA (20%)</td>
+                    <td>50€</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>300€</td>
+                </tr>
+            </tfoot>
+        </table>
+        <footer>
+            <p>Merci pour votre achat !</p>
+        </footer>
+    </div>
+
+    <h2><a href="{% url 'generate_pdf' %}">GENERER PDF</a></h2>
+
+</body>
+</html>
